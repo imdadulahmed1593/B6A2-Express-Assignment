@@ -1,13 +1,12 @@
 import { Request, Response } from "express";
 import { authServices } from "./auth.service";
-import auth from "../../middleware/auth";
 
 const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
     const result = await authServices.loginUser(email, password);
-    // console.log(result.rows[0]);
+
     if (!result) {
       return res.status(404).json({
         success: false,

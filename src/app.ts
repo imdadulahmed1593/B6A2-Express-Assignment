@@ -10,23 +10,21 @@ import { bookingRoutes } from "./modules/booking/booking.routes";
 const app = express();
 // parser
 app.use(express.json());
-// app.use(express.urlencoded());
 
 // initializing DB
 initDB();
 
-// "/" -> localhost:5000/
 app.get("/", logger, (req: Request, res: Response) => {
   res.send(
     "A robust RESTful API for a vehicle rental management system built with Node.js, Express, TypeScript, and PostgreSQL."
   );
 });
 
-//users CRUD
-app.use("/api/v1/users", userRoutes);
-
 //auth routes
 app.use("/api/v1/auth", authRoutes);
+
+//users routes
+app.use("/api/v1/users", userRoutes);
 
 //vehicle routes
 app.use("/api/v1/vehicles", vehicleRoutes);

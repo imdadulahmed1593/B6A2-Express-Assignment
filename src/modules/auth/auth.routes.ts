@@ -1,12 +1,12 @@
 import { Router } from "express";
 import { authController } from "./auth.controller";
+import logger from "../../middleware/logger";
 
 const router = Router();
 
-// http://localhost:5000/api/v1/auth/signin
-router.post("/signin", authController.loginUser);
+router.post("/signin", logger, authController.loginUser);
 
-router.post("/signup", authController.registerUser);
+router.post("/signup", logger, authController.registerUser);
 
 export const authRoutes = router;
 

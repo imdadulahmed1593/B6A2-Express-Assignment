@@ -69,8 +69,7 @@ Before running this project, make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd assignment_02
+git clone <repo_url>
 ```
 
 ### 2. Install Dependencies
@@ -85,7 +84,7 @@ Create a `.env` file in the root directory and add the following variables:
 
 ```env
 PORT=5000
-CONNECTION_STR=postgresql://username:password@localhost:5432/your_database
+CONNECTION_STR=your_postgre_db_connection_string
 JWT_SECRET=your_jwt_secret_key_here
 ```
 
@@ -149,7 +148,6 @@ http://localhost:5000/api/v1
 ### Users
 
 - `GET /users` - Get all users (Admin only)
-- `GET /users/:id` - Get user by ID
 - `PUT /users/:id` - Update user
 - `DELETE /users/:id` - Delete user
 
@@ -164,10 +162,8 @@ http://localhost:5000/api/v1
 ### Bookings
 
 - `GET /bookings` - Get all bookings
-- `GET /bookings/:id` - Get booking by ID
 - `POST /bookings` - Create new booking
 - `PUT /bookings/:id` - Update booking
-- `DELETE /bookings/:id` - Cancel booking
 
 ## 🔐 Authentication
 
@@ -220,15 +216,5 @@ vercel
 ```
 
 Make sure to configure your environment variables in the Vercel dashboard.
-
-## 👨‍💻 Author
-
-[Your Name]
-
-## 📄 License
-
-ISC
-
----
 
 **Note:** This is a learning project developed as part of Next Level Web Development coursework.
